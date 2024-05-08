@@ -50,6 +50,6 @@ CREATE TABLE Tarefas (
     DescricaoTarefa TEXT NOT NULL,
     DataInicio DATE NOT NULL,
     DataTermino DATE NOT NULL,
-    IDProjeto INT,
-    IDEquipe INT NOT NULL
+    IDServico INT,
+    IDMissao INT NOT NULL
 );
