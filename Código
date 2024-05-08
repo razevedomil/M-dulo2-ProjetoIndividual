@@ -1,0 +1,55 @@
+CREATE TABLE EmpresasParceiras (
+    ID SERIAL PRIMARY KEY,
+    NomeEmpresa TEXT NOT NULL,
+    CNPJ TEXT NOT NULL,
+    Telefone TEXT NOT NULL,
+    E-mail TEXT NOT NULL
+);
+
+CREATE TABLE Colaboradores (
+    ID SERIAL PRIMARY KEY,
+    NomeColaborador TEXT NOT NULL,
+    Salario TEXT NOT NULL,
+    Email TEXT NOT NULL,
+    Contato VARCHAR(20) NOT NULL,
+    IDEmpresasParceira INT NOT NULL,
+    IDTarefas INT NOT NULL
+);
+
+CREATE TABLE Tecnologias (
+    ID SERIAL PRIMARY KEY,
+    NomeTecnologia TEXT NOT NULL,
+    Programa TEXT,
+    Area DATE NOT NULL,
+    Vagas DATE NOT NULL,
+    IDCliente INT
+);
+
+CREATE TABLE Servicos (
+    ID SERIAL PRIMARY KEY,
+    DescricaoServico TEXT NOT NULL,
+    Valor FLOAT NOT NULL,
+    IDCliente INT NOT NULL
+);
+
+CREATE TABLE Fornecedores (
+    ID SERIAL PRIMARY KEY,
+    NomeFornecedorTEXT NOT NULL,
+    CNPJFornecedor TEXT NOT NULL,
+    Contato TEXT NOT NULL
+);
+
+CREATE TABLE Missões (
+    ID SERIAL PRIMARY KEY,
+    NomeMissão TEXT NOT NULL,
+    IDMissão INT NOT NULL
+);
+
+CREATE TABLE Tarefas (
+    ID SERIAL PRIMARY KEY,
+    DescricaoTarefa TEXT NOT NULL,
+    DataInicio DATE NOT NULL,
+    DataTermino DATE NOT NULL,
+    IDProjeto INT,
+    IDEquipe INT NOT NULL
+);
