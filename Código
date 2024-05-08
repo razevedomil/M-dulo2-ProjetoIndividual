@@ -22,14 +22,14 @@ CREATE TABLE Tecnologias (
     Programa TEXT,
     Area DATE NOT NULL,
     Vagas DATE NOT NULL,
-    IDCliente INT
+    IDFornecedores INT
 );
 
 CREATE TABLE Servicos (
     ID SERIAL PRIMARY KEY,
     DescricaoServico TEXT NOT NULL,
     Valor FLOAT NOT NULL,
-    IDCliente INT NOT NULL
+    IDFornecedores INT NOT NULL
 );
 
 CREATE TABLE Fornecedores (
@@ -39,10 +39,10 @@ CREATE TABLE Fornecedores (
     Contato TEXT NOT NULL
 );
 
-CREATE TABLE Missões (
+CREATE TABLE Missoes (
     ID SERIAL PRIMARY KEY,
     NomeMissão TEXT NOT NULL,
-    IDMissão INT NOT NULL
+    IDMissao INT NOT NULL
 );
 
 CREATE TABLE Tarefas (
