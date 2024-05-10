@@ -1,0 +1,111 @@
+1. Quais são as entidades necessárias?;
+2. Quais são os principais campos e seus respectivos tipos?;
+3. Como essas entidades estão relacionadas?;
+4. Simule 2 registros para cada entidade.
+
+
+1. Quais são as entidades necessárias?;
+
+Empresas parceiras, Colaboradores, Tarefas, Servicos, Tecnologias, Missões, Fornecedores
+--------------------------------------------------------------------------------------------------
+2. Quais são os principais campos e seus respectivos tipos?;
+Empresas Parceiras:
+ID (Chave Primária, Int
+NomeEmpresa (Text)
+CNPJ (Text)
+Telefone (Text)
+E-mail (Text)
+-------------------
+Tecnologias:
+ID (Chave Primária, Int)
+Nome (Texto)
+EmpresaID (FK Empresas Parceiras)
+IDFornecedores (FK Fornecedores)
+-------------------
+Tarefas:
+ID (Chave Primária, Int)
+IDServicos (FK Servicos)
+IDMissao (FK Missao)
+-------------------
+Missoes:
+ID (Chave Primária, Int)
+-------------------
+Fornecedores:
+ID (Chave Primária, Int)
+-------------------
+Serviços:
+ID (Chave Primária, Int)
+IDFornecedores (FK Fornecedores)
+-------------------
+Colaboradores:
+ID (Chave Primária, Int)
+IDEmpresaParceira (FK EmpresasParceiras)
+IDTarefas (FK Tarefas)
+--------------------------------------------------------------------------------------------------
+3. Como essas entidades estão relacionadas?;
+Empresas Parceiras (1:N) Colaboradores
+Missões (1:N) Tarefas
+Missões (1:1) Equipes
+Fornecedores (1:N) Missões
+Fornecedores (1:N) Serviços
+Colaboradores (1:N) Tarefas
+--------------------------------------------------------------------------------------------------
+4. Simule 2 registros para cada entidade.
+
+Empresas Parceiras:
+
+ID: 1
+NomeEmpresa: Google
+Endereço: Av. dos Andradas, 3000 
+Contato: googlesp@gmail.com
+ID: 2
+NomeEmpresa: Senac
+Endereço: Rua Bambina S/N
+Contato: contato@senac.com
+
+Tecnologias:
+
+ID: 1
+Nome: Acess
+EmpresaID: 1 (Google)
+IDCliente: 1
+ID: 2
+Nome: PowerBI
+EmpresaID: 2 (Senac)
+IDCliente: 2
+
+Tarefas:
+
+ID: 1
+IDProjeto: 1
+IDClientes: 1
+ID: 2
+IDProjeto: 2
+IDClientes: 2
+
+Missoes:
+
+ID: 1
+IDProjeto: 1
+ID: 2
+IDProjeto: 2
+
+Clientes:
+
+ID: 1
+ID: 2
+
+Serviços:
+
+ID: 1
+ID Fornecedores: 1
+ID: 2
+ID Fornecedores: 2
+
+Colaboradores:
+
+ID: 1
+IDEmpresaParceira: 1 (Google)
+ID: 2
+IDEmpresaParceira: 2 (Senac)
+--------------------------------------------------------------------------------------------------
